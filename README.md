@@ -1,4 +1,6 @@
-# Clips
+# Clipz
+
+A fun application for gamers to upload and share their gaming highlights
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
