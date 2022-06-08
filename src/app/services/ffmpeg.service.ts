@@ -28,15 +28,24 @@ export class FfmpegService {
 
     this.ffmpeg.FS('writeFile', file.name, data)
 
-    await this.ffmpeg.run(
+    const seconds = [1,2,3]
+    const commands: string[] = []
+
+    seconds.forEach(second => {
+      commands.push(
       // Input
       '-i', file.name,
       // Putput Options
-      '-ss', '00:00:01',
+      '-ss', `00:00:0${second}`,
       '-frames:v', '1',
       '-filter:v', 'scale= 510: -1',
       // Output
-      'output_01.png'
+      `output_0${second}.png`
+      )
+    })
+
+    await this.ffmpeg.run(
+      ...commands
     )
   }
 }
