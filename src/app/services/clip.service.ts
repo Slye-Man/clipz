@@ -77,6 +77,7 @@ export class ClipService {
     if(this.pendingReq) {
       return
     }
+    
     this.pendingReq = true
     let query = this.clipsCollection.ref.orderBy(
       'timestamp', 'desc'
